@@ -8,7 +8,6 @@ app.use(express.static("public"));
 
 //root route
 app.get('/', async (req, res) => {
-
     let response = await fetch("https://pixabay.com/api/?key=20426927-497d14db9c234faf7d0df8317&per_page=50&orientation=horizontal&q=solar system");
     let data = await response.json();
     let randomImgUrl = data.hits[0].largeImageURL;
@@ -22,6 +21,11 @@ app.get('/planet', (req, res) => {
    let planetInfo = solarSystem[`get${planet_name}`]();
 //    console.log(planetInfo);
    res.render('planetInfo.ejs', {planetInfo, planet_name});
+});
+
+app.get('/nasaPod', (req, res) => {
+//    console.log(planetInfo);
+   res.render('nasaPod.ejs');
 });
 
 

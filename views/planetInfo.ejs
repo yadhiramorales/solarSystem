@@ -15,16 +15,22 @@
 
 <body>
 
-    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
-    <%- include("partials/navbar.ejs") %>
+    <h1 class="text-center bg-black p-5 text-white m-0">The Solar System</h1>
+  <%- include("partials/navbar.ejs") %>
 
-    <h2>  <%=planet_name%> </h2>
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="<%= planetInfo.image %>" alt="<%= planet_name %>" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6 text-white text-start">
+        <h2 class="mb-3"><%= planet_name %></h2>
+        <p><%= planetInfo.description %></p>
+      </div>
+    </div>
+  </div>
 
-    <%= planetInfo.description%>
-    <br>
-    <img src="<%=planetInfo.image %>" width="300">
-
-
+  <%- include("partials/footer.ejs") %>
 </body>
 
 </html>

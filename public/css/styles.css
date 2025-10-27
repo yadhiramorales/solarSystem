@@ -1,3 +1,10 @@
-/* body{
-    text-align: center;
-} */
+body{
+    /* text-align: center; */
+    background-image: url('../img/starryBackground.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.img{
+    width: 700px;
+}
