@@ -10,7 +10,8 @@ app.use(express.static("public"));
 app.get('/', async (req, res) => {
     let response = await fetch("https://pixabay.com/api/?key=20426927-497d14db9c234faf7d0df8317&per_page=50&orientation=horizontal&q=solar system");
     let data = await response.json();
-    let randomImgUrl = data.hits[0].largeImageURL;
+    const randomIndex = Math.floor(Math.random() * data.hits.length);
+    let randomImgUrl = data.hits[randomIndex].largeImageURL;
     console.log(data);
     res.render('home.ejs', {randomImgUrl})
 });
